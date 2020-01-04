@@ -1,0 +1,17 @@
+<yourkey>
+<yourkey>
+https://gateway.watsonplatform.net/visual-recognition/api
+
+curl -u "apikey:<yourkey>" "https://gateway.watsonplatform.net/visual-recognition/api/v3/classify?url=https://www.aviancaenrevista.com/wp-content/uploads/2018/10/arboles-3.jpg&version=2018-03-19"
+
+curl -X POST -u "apikey:<yourkey>" -F "cardboard_positive_examples=@cardboard.zip" -F "glass_positive_examples=@glass.zip" -F "metal_positive_examples=@metal.zip" -F "paper_positive_examples=@paper.zip" -F "plastic_positive_examples=@plastic.zip" -F "negative_examples=@trash.zip" -F "name=recyclator" "https://gateway.watsonplatform.net/visual-recognition/api/v3/classifiers?version=2018-03-19"
+
+curl -u "apikey:<yourkey>" "https://gateway.watsonplatform.net/visual-recognition/api/v3/classifiers?verbose=true&version=2018-03-19"
+
+curl -u "apikey:<yourkey>" "https://gateway.watsonplatform.net/visual-recognition/api/v3/classifiers/recyclator_1944121910?version=2018-03-19"
+
+curl -X DELETE -u "apikey:<yourkey>" "https://gateway.watsonplatform.net/visual-recognition/api/v3/classifiers/recyclator_1944121910?version=2018-03-19"
+
+
+curl -X POST -u "apikey:<yourkey>" -F "mages_file=@envases/plastic1.jpg" -F "threshold=0.6" -F "classifier_ids=recyclator_1982716980"  "https://gateway.watsonplatform.net/visual-recognition/api/v3/classify?version=2018-03-19"
+
